@@ -10,7 +10,7 @@ import com.example.Learningspringdataelasticsearch.helper.*;
 
 
 @Document(indexName = Indices.PERSON_INDEX)
-@Setting(settingPath = "Learning-spring-data-elasticsearch\\src\\main\\resources\\static\\es-settings.json")
+@Setting(settingPath = "static/es-settings.json")
 public class Person {
 
     @Id

@@ -9,22 +9,24 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("api/")
 public class PersonController {
 
-
-    public PersonService personService;
+    private final PersonService personService;
 
     @Autowired
     public PersonController(PersonService personService){
         this.personService = personService;
     }
 
+
+
     @GetMapping("/{personid}")
     public Person getPersons(@PathVariable("personid") String personId) {
         return personService.findById(personId);
     }
 
-    @PostMapping()
+    @PostMapping("/addperson")
     public void addNewPerson(@RequestBody Person person) {
         personService.save(person);
     }
